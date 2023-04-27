@@ -1,5 +1,5 @@
-﻿  소스.cpp
-C:\Users\2\Desktop\c++\gawibawibo\소스.cpp(221,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\2\Desktop\c++\gawibawibo\소스.cpp(83): warning C4715: 'gawibawibo': 모든 제어 경로에서 값을 반환하지는 않습니다.
-C:\Users\2\Desktop\c++\gawibawibo\소스.cpp(107): warning C4715: 'keycontrol': 모든 제어 경로에서 값을 반환하지는 않습니다.
+﻿  gawibawibo.cpp
+C:\Users\2\Desktop\c++\gawibawibo\gawibawibo.cpp(239,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\2\Desktop\c++\gawibawibo\gawibawibo.cpp(125): warning C4715: 'keycontrol': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\2\Desktop\c++\gawibawibo\gawibawibo.cpp(101): warning C4715: 'gawibawibo': 모든 제어 경로에서 값을 반환하지는 않습니다.
   gawibawibo.vcxproj -> C:\Users\2\Desktop\c++\gawibawibo\x64\Debug\gawibawibo.exe
