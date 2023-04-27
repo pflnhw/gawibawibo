@@ -11,3 +11,5 @@
 
 ![로봇팔](https://user-images.githubusercontent.com/129159977/234758526-48e4f7a5-8c6e-472d-8e32-2cfecc3d1542.gif)
 <hr/>
+
+![최종본](https://user-images.githubusercontent.com/129159977/234773106-490c6049-325e-4541-a59b-ffe20ff1650e.mp4)
