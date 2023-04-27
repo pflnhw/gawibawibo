@@ -4,6 +4,11 @@
 
 using namespace std;
 
+int gamestart();
+int menu();
+int main();
+void result();
+
 // 키보드 값
 #define UP 0
 #define DOWN 1
@@ -25,45 +30,48 @@ void select(int x, int y) {
 // 가위 바위 보
 int gawibawibo(int j) {
 	system("cls");
-	if (gamevalue == 0) {
-		cout << endl;
-		cout << endl;
-		cout << "       ##      ## " << endl;
-		cout << "        ##    ##" << endl;
-		cout << "         ##  ##" << endl;
-		cout << "       #########" << endl;
-		cout << "     #############" << endl;
-		cout << "     #############" << endl;
-		cout << "     #############" << endl;
-		cout << "       #########" << endl;
-	}
-	else if (gamevalue == 1) {
-		cout << endl;
-		cout << endl;
-		cout << "        # # # #" << endl;
-		cout << "       #########" << endl;
-		cout << "     #############" << endl;
-		cout << "     #############" << endl;
-		cout << "     #############" << endl;
-		cout << "       #########" << endl;
-	}
-	else if (gamevalue == 2) {
-		cout << endl;
-		cout << endl;
-		cout << "            # # # #" << endl;
-		cout << "            # # # #" << endl;
-		cout << "            # # # #" << endl;
-		cout << "     ##    #########" << endl;
-		cout << "     ##  ##############" << endl;
-		cout << "      #################" << endl;
-		cout << "        ###############" << endl;
-		cout << "           #########" << endl;
-	}
-	else if (gamevalue == 3) {
-		return 0;
-	}
 	int x = 22;
 	int y = 14;
+	if (gamevalue == 0) {
+		cout << endl << endl << endl;
+		cout << "       ##      ##                           " << endl;
+		cout << "        ##    ##                            " << endl;
+		cout << "         ##  ##                             " << endl;
+		cout << "        ########            ##       ##    ###### " << endl;
+		cout << "      ############           ##     ##    ##      " << endl;
+		cout << "      ############            ##   ##     ####### " << endl;
+		cout << "      ############             ## ##           ## " << endl;
+		cout << "       ##########               ###       ######  " << endl;
+		result();
+		gamevalue = 3;
+	}
+	else if (gamevalue == 1) {
+		cout << endl << endl << endl << endl;
+		cout << "         # # # #                           " << endl;
+		cout << "        #########            ##       ##    ###### " << endl;
+		cout << "      #############           ##     ##    ##      " << endl;
+		cout << "      #############            ##   ##     ####### " << endl;
+		cout << "      #############             ## ##           ## " << endl;
+		cout << "        #########                ###       ######  " << endl;
+		result();
+		gamevalue = 3;
+	}
+	else if (gamevalue == 2) {
+		cout << endl << endl;
+		cout << "            # # # #                           " << endl;
+		cout << "            # # # #                           " << endl;
+		cout << "            # # # #                           " << endl;
+		cout << "           #########            ##       ##    ###### " << endl;
+		cout << "     ##  ############            ##     ##    ##      " << endl;
+		cout << "      ## #############            ##   ##     ####### " << endl;
+		cout << "       ##############              ## ##           ## " << endl;
+		cout << "           #########                ###       ######  " << endl;
+		result();
+		gamevalue = 3;
+	}
+	else if (gamevalue == 3) {
+		return 3;
+	}
 	select(x - 2, y);
 	cout << ">   가 위 ";
 	select(x, y + 1);
@@ -138,9 +146,9 @@ int menu() {
 
 // 게 임 시 작
 int gamestart() {
-	system("cls");
 	int x = 22;
 	int y = 14;
+	system("cls");
 	select(x - 2, y);
 	cout << ">   가 위 ";
 	select(x, y + 1);
@@ -173,6 +181,8 @@ int gamestart() {
 		case SUBMIT: {
 			gamevalue = y - 14;
 			gawibawibo(gamevalue);
+			if (gawibawibo(gamevalue) == 3) return 0;
+			
 		}
 		}
 	}
@@ -186,6 +196,59 @@ void info() {
 	cout << "이동 : W, A, S, D" << endl;
 	cout << "선택 : 스페이스바 " << endl;
 	cout << "스페이스바를 누르면 메인화면으로 이동합니다." << endl;
+	while (1) {
+		if (keycontrol() == SUBMIT) break;
+	}
+}
+
+// 게임 결과
+void result() {
+	int x = 22;
+	int y = 14;
+	select(x, y);
+	cout << "    ";
+	cout << "  3 ";
+	Sleep(1000);
+	select(x, y);
+	cout << "    ";
+	cout << "  2 ";
+	Sleep(1000);
+	select(x, y);
+	cout << "    ";
+	cout << "  1 ";
+	Sleep(1000);
+	system("cls");
+	srand(time(NULL));
+	int random = rand()%3;
+		if (random == 0) {
+			cout << endl << endl << endl << endl;
+			cout << "          ##                ##  #######  ##     ## " << endl;
+			cout << "           ##      ##      ##     ###    ####   ## " << endl;
+			cout << "            ##    ####    ##      ###    ## ##  ## " << endl;
+			cout << "             ##  ##  ##  ##       ###    ##  ## ## " << endl;
+			cout << "              ####    ####        ###    ##   #### " << endl;
+			cout << "               ##      ##       #######  ##     ## " << endl;
+		}
+		else if (random == 1) {
+			cout << endl << endl << endl << endl;
+			cout << "          ##           #####     ####### ########   " << endl;
+			cout << "          ##        ##      ##  ##       ##         " << endl;
+			cout << "          ##        ##      ##  ######## ########   " << endl;
+			cout << "          ##        ##      ##        ## ##         " << endl;
+			cout << "          ##        ##      ##        ## ##         " << endl;
+			cout << "          #########   ######    ######## ########   " << endl;
+		}
+		else if (random == 2) {
+			cout << endl << endl << endl << endl;
+			cout << "     #######     ######        ###     ##                ## " << endl;
+			cout << "     ##    ###   ##   ##     ### ###    ##      ##      ## " << endl;
+			cout << "     ##      ##  ##    ##   ##     ##    ##    ####    ## " << endl;
+			cout << "     ##      ##  ########   #########     ##  ##  ##  ##" << endl;
+			cout << "     ##    ###   ##    ##   ##     ##      ####    ####" << endl;
+			cout << "     #######     ##     ##  ##     ##       ##      ## " << endl;
+		}
+	select(x - 2, y+3);
+	cout << ">   확 인 ";
 	while (1) {
 		if (keycontrol() == SUBMIT) break;
 	}
